@@ -1,0 +1,6 @@
+### File locker V 1.0 ###
+
+To improve the application we can
+
+Gui design improvements
+Multiple user capability
