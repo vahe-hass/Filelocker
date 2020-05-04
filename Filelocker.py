@@ -6,15 +6,29 @@ from PIL import ImageTk,Image
 from cryptography.fernet import Fernet
 import time
 import shutil
-import os
+import os , sys
 
 # Paths and directories
-main_path = os.getcwd()
+our_location_list = sys.argv
+filelocker_path = our_location_list[0]
+filelocker_directory = os.path.dirname(str(filelocker_path))
+os.chdir(str(filelocker_directory))
+
+
+try:
+    os.mkdir('files')
+    os.mkdir('data')
+except FileExistsError:
+    pass
+
+
 files_path = os.getcwd() + '\\files'
 data_path = os.getcwd() + '\\data'
 icon_path = os.getcwd() + '\\icons'
 path1 = str(data_path) + '\\user.key'
 path2 =  str(data_path) + '\\pass.key'
+
+
 
 class Cipher:
 
